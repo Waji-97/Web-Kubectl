@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'icon/main.png' %}" type="image/x-icon">
+    <title>Session List</title>
+    <link rel="stylesheet" href="{% static 'main/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{user.username}}</h1>
+        <div class="user-actions">
+            <form id="logout-form" action="{% url 'main:logout' %}" method="post">
+                {% csrf_token %}
+                <a href="javascript:;" onclick="document.getElementById('logout-form').submit();" class="action-btn logout-btn">Logout</a>
+            </form>
+            <a href="{% url 'main:password_change' %}" class="action-btn change-password-btn">Change Password</a>
+        </div>
+        <a href="{% url 'main:session-create' %}" class="create-btn">Create New Session</a>
+        <div class="session-list">
+            {% for session in sessions %}
+            <div class="session-card">
+                <div class="session-info">
+                    {{ session.cluster_name }}
+                </div>
+                <div class="session-actions">
+                    <a href="{% url 'main:session-details' session.pk %}" class="details-btn">Details</a>
+                    <a href="{% url 'main:session-delete' session.pk %}" class="delete-btn" onclick="return confirm('Are you sure?');">Delete</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="{% static 'main/script.js' %}"></script>
+</body>
+</html>

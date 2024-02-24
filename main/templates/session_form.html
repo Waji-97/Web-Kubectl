@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'img/main.png' %}" type="image/x-icon">
+    <title>Create Session</title>
+    <link rel="stylesheet" href="{% static 'main/styles.css' %}">
+</head>
+<body class="login">
+    <div class="container">
+        <h1>New Session</h1>
+        <form method="post" action="{% url 'main:session-create' %}"> 
+            {% csrf_token %}
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" class="form-control" name="cluster_name" id="id_cluster_name" placeholder="Cluster name" value="{{ form.cluster_name.value|default_if_none:'' }}" required>
+                    {% if form.cluster_name.errors %}
+                        <div class="error">{{ form.cluster_name.errors.as_text }}</div>
+                    {% endif %}
+                </div>
+                <div class="input-field col s12">
+                    <input type="url" class="form-control" name="shell" id="id_shell" placeholder="Kubectl Shell" value="{{ form.shell.value|default_if_none:'' }}" required>
+                    {% if form.shell.errors %}
+                        <div class="error">{{ form.shell.errors.as_text }}</div>
+                    {% endif %}
+                </div>
+                <div class="input-field col s12">
+                    <input type="url" class="form-control" name="prometheus" id="id_prometheus" placeholder="Prometheus" value="{{ form.prometheus.value|default_if_none:'' }}" required>
+                    {% if form.prometheus.errors %}
+                        <div class="error">{{ form.prometheus.errors.as_text }}</div>
+                    {% endif %}
+                </div>
+                <div class="input-field col s12">
+                    <input type="url" class="form-control" name="grafana" id="id_grafana" placeholder="Grafana" value="{{ form.grafana.value|default_if_none:'' }}" required>
+                    {% if form.grafana.errors %}
+                        <div class="error">{{ form.grafana.errors.as_text }}</div>
+                    {% endif %}
+                </div>
+                <div class="input-field col s12">
+                    <input type="url" class="form-control" name="alertmanager" id="id_alertmanager" placeholder="Alertmanager" value="{{ form.alertmanager.value|default_if_none:'' }}" required>
+                    {% if form.alertmanager.errors %}
+                        <div class="error">{{ form.alertmanager.errors.as_text }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <button type="submit" class="btn">Save Session</button>
+        </form>
+    </div>
+    <script src="{% static 'main/script.js' %}"></script>
+</body>
+</html>

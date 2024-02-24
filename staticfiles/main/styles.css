@@ -1,0 +1,283 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 100px;
+}
+
+.login {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.create-btn {
+    background-color: #6200EA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+    transition: background 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+}
+
+.create-btn:hover {
+    background-color: #7B1FA2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.session-list {
+    margin-top: 20px;
+}
+
+.session-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: box-shadow 0.3s;
+    margin-bottom: 10px; /* Space between session cards */
+}
+
+.session-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.session-info {
+    font-size: 1.1em;
+}
+
+.session-actions a {
+    text-decoration: none;
+    color: white !important;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.details-btn, .delete-btn {
+    color: white !important; /* Set text color to white */
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: inline-block; /* To enable padding and margin */
+    margin-right: 8px; /* Adjust space between buttons */
+}
+
+.details-btn {
+    background-color: #6200EA; /* Purple background */
+}
+
+.delete-btn {
+    background-color: #ff4c4c; /* Red background */
+}
+
+.details-btn:hover {
+    background-color: #5a00d1; /* Darker purple on hover */
+}
+
+.delete-btn:hover {
+    background-color: #e60000; /* Darker red on hover */
+}
+
+
+
+.custom-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 10px;
+    gap: 20px; /* Space between buttons */
+}
+
+.custom-card-button {
+    background-color: #ffffff; /* White background */
+    color: #333; /* Dark text color for contrast */
+    border: 1px solid #ddd; /* Light border */
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for card effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+    width: 240px; /* Fixed width, adjust as needed */
+    margin-bottom: 20px; /* Space at the bottom */
+    text-align: center; /* Center text */
+}
+
+.card-button-icon {
+    width: 80px; /* Adjust based on your icon size */
+    height: 80px; /* Adjust based on your icon size */
+    margin-bottom: 15px; /* Space between icon and text */
+}
+
+.custom-card-button:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+    transform: translateY(-5px); /* Lift effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .custom-card-container {
+        justify-content: center;
+    }
+    .custom-card-button {
+        width: 45%; /* Adjust to have 2 buttons per row */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-card-button {
+        width: 90%; /* Adjust to stack buttons vertically */
+        margin-bottom: 20px;
+    }
+}
+
+
+.input-field {
+    margin: 15px 0; /* Adds space between input fields */
+}
+
+.input-field label {
+    display: block; /* Makes the label display as a block element */
+    color: #333; /* Sets the label text color */
+    margin-bottom: 5px; /* Adds a small space between the label and the input field */
+}
+
+.input-field input[type='text'],
+.input-field input[type='url'] {
+    width: 100%; /* Full width of the parent */
+    padding: 10px; /* Adds some padding inside the input field */
+    border: 1px solid #ccc; /* A light border for the input field */
+    border-radius: 4px; /* Rounded borders for the input fields */
+}
+
+.btn {
+    background-color: #6200EA; /* Purple background matching your theme */
+    font-weight: bold;
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 4px; /* Rounded corners for the button */
+    cursor: pointer; /* Changes the cursor to indicate it's clickable */
+    display: block; /* Ensures the button is a block element */
+    width: 100%; /* Makes the button full width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow to match other elements */
+    margin-top: 20px; /* Adds space above the button */
+}
+
+.btn:hover {
+    background-color: #7B1FA2; /* A darker shade of purple for hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Slightly wider on smaller screens */
+    }
+}
+
+
+
+.action-btn {
+    padding: 10px 16px;
+    margin-left: 10px; 
+    margin-bottom: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    color: white; 
+    font-weight: bold;
+}
+
+.logout-btn {
+    background-color: #ff4c4c;
+    display: inline-block;
+    
+}
+
+.logout-btn:hover {
+    background-color: #e60000; /* Darker red on hover */
+}
+
+.change-password-btn {
+    background-color: #f0ad4e; /* Orange background for change password */
+}
+
+.change-password-btn:hover {
+    background-color: #ec971f; /* Darker orange on hover */
+}
+
+
+.user-actions {
+    position: absolute;
+    right: 70px;
+    top: 70px; 
+    display: flex; /* This will line up the contained elements (buttons) in a row */
+    gap: 10px; 
+}
+
+.error {
+    color: #ff0000;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.login-block {
+    width: 100%;
+    max-width: 350px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+   
+    transition: all 0.3s ease;
+}
+
+
+.login-block h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="url"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 2px solid #e1e4e8;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="url"]:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}

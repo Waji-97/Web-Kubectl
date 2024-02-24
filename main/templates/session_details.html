@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'icon/main.png' %}" type="image/x-icon">
+    <title>Session Details</title>
+    <link rel="stylesheet" href="{% static 'main/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ session.cluster_name }}</h1>
+        <div class="row">
+            <div class="custom-card-container">
+                <button onclick="window.open('{{ session.shell }}', '_blank');" class="custom-card-button">
+                    <img src="{% static 'icon/shell.png' %}" alt="Backend" class="card-button-icon">
+                    Kubectl Shell
+                </button>
+                <button onclick="window.open('{{ session.prometheus }}', '_blank');" class="custom-card-button">
+                    <img src="{% static 'icon/prometheus.png' %}" alt="Backend" class="card-button-icon">
+                    Prometheus
+                </button>
+                <button onclick="window.open('{{ session.grafana }}', '_blank');" class="custom-card-button">
+                    <img src="{% static 'icon/grafana.png' %}" alt="Backend" class="card-button-icon">
+                    Grafana
+                </button>
+                <button onclick="window.open('{{ session.alertmanager }}', '_blank');" class="custom-card-button">
+                    <img src="{% static 'icon/alertmanager.png' %}" alt="Backend" class="card-button-icon">
+                    Alertmanager
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'main/script.js' %}"></script>
+</body>
+</html>
