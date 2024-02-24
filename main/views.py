@@ -32,7 +32,7 @@ def session_details(request, pk):
 
 class CustomPasswordChangeView(auth_views.PasswordChangeView):
     template_name = 'password_change_form.html'
-    success_url = reverse_lazy('session-list')
+    success_url = reverse_lazy('main:session-list')
 
     def form_valid(self, form):
         messages.success(self.request, 'Your password was successfully updated.')
